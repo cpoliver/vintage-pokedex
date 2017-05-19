@@ -4,7 +4,7 @@ import { AppRegistry } from 'react-native';
 import Header from './src/components/header';
 
 const App = () => (
-  <Header />
+  <Header text="Pokémon" />
 );
 
 AppRegistry.registerComponent('vintagePokedex', () => App);
