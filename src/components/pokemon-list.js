@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 
 import PokemonDetail from './pokemon-detail';
@@ -22,9 +22,9 @@ class PokemonList extends Component {
     const { pokemon } = this.state;
 
     return (
-      <View>
+      <ScrollView>
         {this.renderPokemon()}
-      </View>
+      </ScrollView>
     );
   }
 };
