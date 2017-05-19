@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+
+import PokemonDetail from './pokemon-detail';
 
 class PokemonList extends Component {
   state = { pokemon: [] };
@@ -12,7 +14,7 @@ class PokemonList extends Component {
 
   renderPokemon() {
     return this.state.pokemon.map(pokemon =>
-      <Text key={pokemon.name}>{pokemon.name}</Text>
+      <PokemonDetail {...pokemon} key={pokemon.name} />
     );
   }
 
