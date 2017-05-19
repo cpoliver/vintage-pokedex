@@ -3,21 +3,22 @@ import { Image, Text, View } from 'react-native';
 
 import Card from './card';
 import CardSection from './card-section';
+import PokemonImage from './pokemon-image';
 
 const PokemonDetail = ({ name }) => {
-  const { headerContentStyle, iconStyle, titleStyle, imageStyle } = styles;
+  const { headerContentStyle, iconStyle, titleStyle } = styles;
 
   return (
     <Card>
       <CardSection>
         <View style={headerContentStyle}>
-          <Image source={require('../../res/pokeball.png')} style={iconStyle} />
+          <Image source={require('../../img/pokeball.png')} style={iconStyle} />
           <Text style={titleStyle}>{name}</Text>
         </View>
       </CardSection>
 
       <CardSection>
-        <Image source={require(`../../res/img/${name}.png`)} style={imageStyle} />
+        <PokemonImage name={name} />
       </CardSection>
     </Card>
   );
@@ -32,10 +33,6 @@ const styles = {
     height: 24,
     marginRight: 10,
     width: 24
-  },
-  imageStyle: {
-    height: 200,
-    width: 200
   },
   titleStyle: {
     fontSize: 18,
