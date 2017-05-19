@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+
+import Card from './card';
 
 const PokemonDetail = ({ name }) => (
-    <View>
-      <Text>{name}</Text>
-    </View>
+  <Card>
+    <Text>{name}</Text>
+  </Card>
 );
 
 export default PokemonDetail;
