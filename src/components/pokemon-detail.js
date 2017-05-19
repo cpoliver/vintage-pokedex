@@ -4,9 +4,10 @@ import { Image, Text, View } from 'react-native';
 import Card from './card';
 import CardSection from './card-section';
 import PokemonImage from './pokemon-image';
+import Stat from './stat';
 
-const PokemonDetail = ({ name }) => {
-  const { headerContentStyle, iconStyle, titleStyle } = styles;
+const PokemonDetail = ({ name, species, type, height, weight }) => {
+  const { headerContentStyle, iconStyle, titleStyle, statColumnStyle } = styles;
 
   return (
     <Card>
@@ -19,6 +20,17 @@ const PokemonDetail = ({ name }) => {
 
       <CardSection>
         <PokemonImage name={name} />
+      </CardSection>
+
+      <CardSection>
+        <View style={statColumnStyle}>
+          <Stat label="Type" value={type} />
+          <Stat label="Species" value={species} />
+        </View>
+        <View style={statColumnStyle}>
+          <Stat label="Height" value={height} />
+          <Stat label="Weight" value={weight} />
+        </View>
       </CardSection>
     </Card>
   );
@@ -33,6 +45,10 @@ const styles = {
     height: 24,
     marginRight: 10,
     width: 24
+  },
+  statColumnStyle: {
+    flex: 1,
+    justifyContent: 'space-around'
   },
   titleStyle: {
     fontSize: 18,
