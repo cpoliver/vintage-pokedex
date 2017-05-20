@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
 
-import PokemonDetail from './pokemon-detail';
+import PokemonDetail from './PokemonDetail';
 
 class PokemonList extends Component {
   state = { pokemon: [] };

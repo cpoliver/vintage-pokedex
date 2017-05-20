@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, Linking, Text, View } from 'react-native';
 
-import Button from './button';
-import Card from './card';
-import CardSection from './card-section';
-import PokemonImage from './pokemon-image';
-import Stat from './stat';
+import Button from './Button';
+import Card from './Card';
+import CardSection from './CardSection';
+import PokemonImage from './PokemonImage';
+import Stat from './Stat';
 
 const PokemonDetail = ({ name, species, type, height, weight }) => {
   const { headerContentStyle, iconStyle, titleStyle, statColumnStyle } = styles;
