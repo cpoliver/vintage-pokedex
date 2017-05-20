@@ -37,7 +37,7 @@ const PokemonDetail = ({ name, species, type, height, weight }) => {
       </CardSection>
 
       <CardSection>
-        <Button text="View on Wikia" onPress={() => Linking.openURL(wikiaUrl)} />
+        <Button onPress={() => Linking.openURL(wikiaUrl)}>View on Wikia</Button>
       </CardSection>
     </Card>
   );
