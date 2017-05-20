@@ -6,7 +6,7 @@ import PokemonList from './src/components/pokemon-list';
 
 const App = () => (
   <View>
-    <Header text="Pokémon" />
+    <Header text="Pokédex Demo" />
     <PokemonList />
   </View>
 );
