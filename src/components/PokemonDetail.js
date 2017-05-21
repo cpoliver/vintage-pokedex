@@ -53,7 +53,7 @@ const styles = {
   },
   statColumnStyle: {
     flex: 1,
-    justifyContent: 'space-around'
+    marginLeft: 40
   },
   titleStyle: {
     fontSize: 18,
