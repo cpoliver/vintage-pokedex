@@ -5,7 +5,7 @@ import { Header } from './components/common';
 import PokemonList from './components/PokemonList';
 
 const App = () => (
-  <View>
+  <View style={{ flex: 1 }}>
     <Header text="Pokédex Demo" />
     <PokemonList />
   </View>
