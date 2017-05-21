@@ -1,9 +1,7 @@
 import React from 'react';
 import { Image, Linking, Text, View } from 'react-native';
 
-import Button from './Button';
-import Card from './Card';
-import CardSection from './CardSection';
+import { Button, Card, CardSection } from './common';
 import PokemonImage from './PokemonImage';
 import Stat from './Stat';
 

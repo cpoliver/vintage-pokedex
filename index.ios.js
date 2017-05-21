@@ -1,14 +1,5 @@
-import React from 'react';
-import { AppRegistry, View } from 'react-native';
+import { AppRegistry } from 'react-native';
 
-import Header from './src/components/Header';
-import PokemonList from './src/components/PokemonList';
-
-const App = () => (
-  <View>
-    <Header text="Pokédex Demo" />
-    <PokemonList />
-  </View>
-);
+import App from './src/app';
 
 AppRegistry.registerComponent('vintagePokedex', () => App);
