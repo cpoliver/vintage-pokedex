@@ -5,7 +5,7 @@ import { Button, Card, CardSection } from './common';
 import PokemonImage from './PokemonImage';
 import Stat from './Stat';
 
-const PokemonDetail = ({ name, species, type, height, weight }) => {
+const PokemonDetail = ({ name, species, type, height, weight, image }) => {
   const { headerContentStyle, iconStyle, titleStyle, statColumnStyle } = styles;
 
   const wikiaUrl = `http://pokemon.wikia.com/wiki/${name}`;
@@ -20,7 +20,7 @@ const PokemonDetail = ({ name, species, type, height, weight }) => {
       </CardSection>
 
       <CardSection>
-        <PokemonImage name={name} />
+        <PokemonImage image={image} />
       </CardSection>
 
       <CardSection>
