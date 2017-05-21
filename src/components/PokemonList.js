@@ -15,6 +15,7 @@ class PokemonList extends Component {
     return (
       <FlatList
         data={this.props.pokemon}
+        keyExtractor={({ id }) => id}
         renderItem={this.renderItem}
       />
     );
