@@ -15,7 +15,7 @@ class PokemonListItem extends Component {
     const { expanded } = this.props;
 
     if (expanded) {
-      return <PokemonDetail {...this.props} />;
+      return <PokemonDetail {...this.props.item} />;
     }
   }
 
@@ -36,7 +36,7 @@ class PokemonListItem extends Component {
   }
 
   render() {
-    const { id, name, type } = this.props;
+    const { id, name, type } = this.props.item;
     const { containerStyle, nameTextStyle, numberTextStyle } = styles;
 
     return (
@@ -87,8 +87,8 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ selectedPokemonId }, { id }) => ({
-  expanded: selectedPokemonId === id
+const mapStateToProps = ({ selectedPokemonId }, { item }) => ({
+  expanded: selectedPokemonId === item.id
 });
 
 export default connect(mapStateToProps, { selectPokemon })(PokemonListItem);
