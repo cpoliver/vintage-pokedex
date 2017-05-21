@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { LayoutAnimation, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { connect } from 'react-redux';
 
+import { selectPokemon } from '../actions';
 import { CardSection } from './common';
+import PokemonDetail from './PokemonDetail';
 
 class PokemonListItem extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
+  }
+
+  renderDetail() {
+    const { expanded } = this.props;
+
+    if (expanded) {
+      return <PokemonDetail {...this.props} />;
+    }
+  }
+
   renderType(type) {
     const { typeTextStyle } = styles;
 
@@ -25,17 +40,22 @@ class PokemonListItem extends Component {
     const { containerStyle, nameTextStyle, numberTextStyle } = styles;
 
     return (
-      <CardSection style={containerStyle}>
-        <View style={{ alignSelf: 'center', flex: 0.75 }}>
-          <Text style={numberTextStyle}>#{id}</Text>
+      <TouchableWithoutFeedback onPress={() => this.props.selectPokemon(id)}>
+        <View>
+          <CardSection style={containerStyle}>
+            <View style={{ alignSelf: 'center', flex: 0.75 }}>
+              <Text style={numberTextStyle}>#{id}</Text>
+            </View>
+            <View style={{ alignSelf: 'center', flex: 2 }}>
+              <Text style={nameTextStyle}>{name}</Text>
+            </View>
+            <View style={{ alignSelf: 'center', flex: 2 }}>
+              {this.renderTypes(type)}
+            </View>
+          </CardSection>
+          {this.renderDetail()}
         </View>
-        <View style={{ alignSelf: 'center', flex: 2 }}>
-          <Text style={nameTextStyle}>{name}</Text>
-        </View>
-        <View style={{ alignSelf: 'center', flex: 2 }}>
-          {this.renderTypes(type)}
-        </View>
-      </CardSection>
+      </TouchableWithoutFeedback>
     );
   }
 }
@@ -67,4 +87,8 @@ const styles = {
   }
 };
 
-export default PokemonListItem;
+const mapStateToProps = ({ selectedPokemonId }, { id }) => ({
+  expanded: selectedPokemonId === id
+});
+
+export default connect(mapStateToProps, { selectPokemon })(PokemonListItem);
