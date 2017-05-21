@@ -1,34 +1,24 @@
 import React from 'react';
 import { Image, Linking, Text, View } from 'react-native';
 
-import { Button, Card, CardSection } from './common';
+import { Button, CardSection } from './common';
 import PokemonImage from './PokemonImage';
 import Stat from './Stat';
 
 const PokemonDetail = ({ name, species, type, height, weight, image }) => {
-  const { headerContentStyle, iconStyle, titleStyle, statColumnStyle } = styles;
+  const { headerContentStyle, titleStyle, statContainerStyle } = styles;
 
   const wikiaUrl = `http://pokemon.wikia.com/wiki/${name}`;
 
   return (
-    <Card>
-      <CardSection>
-        <View style={headerContentStyle}>
-          <Image source={require('../../img/pokeball.png')} style={iconStyle} />
-          <Text style={titleStyle}>{name}</Text>
-        </View>
-      </CardSection>
-
+    <View>
       <CardSection>
         <PokemonImage image={image} />
       </CardSection>
 
       <CardSection>
-        <View style={statColumnStyle}>
-          <Stat label="Type" value={type} />
+        <View style={statContainerStyle}>
           <Stat label="Species" value={species} />
-        </View>
-        <View style={statColumnStyle}>
           <Stat label="Height" value={height} />
           <Stat label="Weight" value={weight} />
         </View>
@@ -37,23 +27,23 @@ const PokemonDetail = ({ name, species, type, height, weight, image }) => {
       <CardSection>
         <Button onPress={() => Linking.openURL(wikiaUrl)}>View on Wikia</Button>
       </CardSection>
-    </Card>
+    </View>
   );
 };
 
 const styles = {
+  centerStatStyle: {
+    marginLeft: 10,
+    marginRight: 10
+  },
   headerContentStyle: {
     alignItems: 'center',
     flexDirection: 'row'
   },
-  iconStyle: {
-    height: 24,
-    marginRight: 10,
-    width: 24
-  },
-  statColumnStyle: {
+  statContainerStyle: {
     flex: 1,
-    marginLeft: 40
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   },
   titleStyle: {
     fontSize: 18,

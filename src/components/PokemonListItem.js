@@ -69,7 +69,8 @@ const styles = {
     fontWeight: 'bold'
   },
   numberTextStyle: {
-    color: '#c82b1d'
+    color: '#c82b1d',
+    marginLeft: 10
   },
   typeContainerStyle: {
     flexDirection: 'row'
@@ -82,8 +83,9 @@ const styles = {
     fontSize: 9,
     fontWeight: 'bold',
     marginRight: 10,
-    padding: 3,
-    paddingLeft: 5
+    padding: 2,
+    paddingLeft: 5,
+    paddingTop: 3
   }
 };
 
