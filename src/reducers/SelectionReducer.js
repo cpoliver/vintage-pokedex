@@ -1,4 +1,4 @@
-export default (state = null, { type, payload }) => {
+export default (state = "001", { type, payload }) => {
   const actions = {
     'SELECT_POKEMON': payload
   };
