@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 import { Spinner } from './common';
 import PokemonListItem from './PokemonListItem';
