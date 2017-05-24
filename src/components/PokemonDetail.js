@@ -2,10 +2,11 @@ import React from 'react';
 import { Image, Linking, Text, View } from 'react-native';
 
 import { Button, CardSection } from './common';
+import Pokedex from './Pokedex';
 import PokemonImage from './PokemonImage';
 import Stat from './Stat';
 
-const PokemonDetail = ({ name, species, type, height, weight, image }) => {
+const PokemonDetail = ({ name, species, type, height, weight, image, pokedex }) => {
   const { headerContentStyle, titleStyle, statContainerStyle } = styles;
 
   const wikiaUrl = `http://pokemon.wikia.com/wiki/${name}`;
@@ -14,6 +15,10 @@ const PokemonDetail = ({ name, species, type, height, weight, image }) => {
     <View>
       <CardSection>
         <PokemonImage image={image} />
+      </CardSection>
+
+      <CardSection>
+        <Pokedex pokedexEntries={pokedex} />
       </CardSection>
 
       <CardSection>
